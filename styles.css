@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #f5e642;
+  --border: #f5e642;
+  --bg: #1a1a1a;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg, #1a1a1a);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ── Main Card ── */
+.cuadro {
+  background-color: #111111;
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 28px 28px 32px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2a2a2a;
+}
+
+/* ── Header ── */
+.cuadro h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+/* ── Subtítulos ── */
+.cuadro h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.cuadro > p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+
+/* ── Resultado final ── */
+#notaFinal {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+}
+
+/* ── Input rows ── */
+.Puntaje {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.Puntaje label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.85;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+/* ── input-wrapper ── */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.input-wrapper input[type="number"],
+.Puntaje input[type="number"] {
+  width: 100%;
+  flex: 1;
+  border-radius: 50px;
+  background: transparent;
+  border: 2px solid var(--border);
+  padding: 8px 16px;
+  color: var(--accent);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  opacity: 0.6;
+}
+
+.input-wrapper input[type="number"]:focus,
+.Puntaje input[type="number"]:focus {
+  opacity: 1;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+
+.input-wrapper input[type="number"]::-webkit-outer-spin-button,
+.input-wrapper input[type="number"]::-webkit-inner-spin-button,
+.Puntaje input[type="number"]::-webkit-outer-spin-button,
+.Puntaje input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-wrapper input[type="number"]::placeholder,
+.Puntaje input[type="number"]::placeholder {
+  color: var(--accent);
+  opacity: 0.3;
+}
+
+/* ── Engranaje ── */
+#gear-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: #111;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.4s;
+  z-index: 100;
+  border: 1px solid #333;
+}
+
+#gear-btn:hover {
+  transform: rotate(60deg);
+}
+
+/* ── Panel de temas ── */
+#color-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  background: #111;
+  border-radius: 12px;
+  padding: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  z-index: 100;
+  border: 1px solid #2a2a2a;
+  min-width: 190px;
+}
+
+#color-panel.visible {
+  display: flex;
+}
+
+#color-panel p {
+  font-size: 0.72rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.color-option {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #ccc;
+  transition: background 0.15s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.color-option:hover {
+  background: #1e1e1e;
+}
+
+/* ── Responsive ── */
+@media (max-width: 420px) {
+  .cuadro {
+    padding: 22px 18px 26px;
+  }
+  .cuadro h1 {
+    font-size: 1.4rem;
+  }
+  .Puntaje label {
+    min-width: 110px;
+    font-size: 0.82rem;
+  }
+}
