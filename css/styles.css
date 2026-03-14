@@ -204,15 +204,56 @@ body {
 }
 
 /* ── Responsive ── */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    align-items: flex-start;
+  }
+
   .cuadro {
-    padding: 22px 18px 26px;
+    border-radius: 0;
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 24px 20px 40px;
   }
+
   .cuadro h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
   }
+
+  /* Labels e inputs se apilan verticalmente */
+  .Puntaje {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
   .Puntaje label {
-    min-width: 110px;
-    font-size: 0.82rem;
+    min-width: unset;
+    font-size: 0.85rem;
+  }
+
+  .input-wrapper,
+  .Puntaje input[type="number"] {
+    width: 100%;
+  }
+
+  #notaFinal {
+    font-size: 1rem;
+  }
+
+  /* Engranaje más pequeño */
+  #gear-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  #color-panel {
+    right: 16px;
+    bottom: 66px;
   }
 }
